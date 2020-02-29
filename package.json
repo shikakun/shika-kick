@@ -1,25 +1,21 @@
 {
   "name": "shika-kick",
-  "version": "1.0.0",
+  "version": "2.0.0",
+  "config": {
+    "distDir": "public",
+    "srcDir": "src"
+  },
   "scripts": {
-    "start": "gulp",
-    "build": "gulp build"
+    "build": "parcel build $npm_package_config_srcDir/index.html -d $npm_package_config_distDir",
+    "clean": "rm -r $npm_package_config_distDir",
+    "prebuild": "npm run clean",
+    "start": "parcel $npm_package_config_srcDir/index.html -d $npm_package_config_distDir"
   },
   "devDependencies": {
-    "browser-sync": "^2.16.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-csso": "^2.0.0",
-    "gulp-ejs": "^2.2.0",
-    "gulp-htmlmin": "^2.0.0",
-    "gulp-imagemin": "^3.0.3",
-    "gulp-plumber": "^1.1.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^2.0.0",
-    "gulp-watch": "^4.3.9",
-    "imagemin-jpeg-recompress": "^5.1.0",
-    "imagemin-pngquant": "^5.0.0",
-    "run-sequence": "^1.2.2"
+    "autoprefixer": "^9.7.4",
+    "normalize-scss": "^7.0.1",
+    "parcel-bundler": "^1.12.4",
+    "postcss-modules": "^1.5.0",
+    "sass": "^1.26.2"
   }
 }
